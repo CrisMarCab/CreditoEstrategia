@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 namespace CompleteProject
 {
 
-	public class moveryatacar : MonoBehaviour {
+	public class moveryatacar : NetworkBehaviour {
 
 		public float shootDistance = 10f;
 		public float shootRate = .5f;
@@ -51,7 +52,9 @@ namespace CompleteProject
 					{*/
 						walking = true;
 						enemyClicked = false;
-						navMeshAgent.destination = hit.point;
+                        Debug.Log(hit.point);
+
+                        navMeshAgent.destination = hit.point;
 						navMeshAgent.Resume ();
 					//}
 				}
