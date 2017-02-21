@@ -7,16 +7,27 @@ public class NetworkManager : MonoBehaviour {
 	private const string typeName = "EstrategiaiGenial2017";
 	private const string gameName = "Habitacion";
 	private HostData[] hostlist;
+
+    private void start() {
+        /*
+        MasterServer.ipAddress = "127.0.0.1";
+        MasterServer.port = 10002;
+        */
+
+    }
+
 	private void RefreshHostList()
 	{
-		MasterServer.RequestHostList (typeName);
+        MasterServer.RequestHostList(typeName);
 	}
+
 	void OnMasterserverEvent(MasterServerEvent msEvent)
 	{
 		if (msEvent == MasterServerEvent.HostListReceived)
 			//Checkea con pollHostList y guarda en hostlist la ultima lista  host recibida (HostList)
-			hostlist = MasterServer.PollHostList ();
+			hostlist = MasterServer.PollHostList();
 	}
+
 	private void JoinServer(HostData hostdata)
 	{
 		//Se conecta al servidor que le pasas por parametro
@@ -32,8 +43,10 @@ public class NetworkManager : MonoBehaviour {
 
 	private void StartServer()
 	{
-		Network.InitializeServer (2, 25000, !Network.HavePublicAddress());
-		MasterServer.RegisterHost (typeName, gameName);
+        bool useNat = !Network.HavePublicAddress();
+
+		Network.InitializeServer (4, 10002, useNat);
+		MasterServer.RegisterHost(typeName, gameName);
 	}
 
 	void OnServerInitialized()
@@ -47,7 +60,6 @@ public class NetworkManager : MonoBehaviour {
         {
             if (GUI.Button(new Rect(100, 100, 250, 100), "Start Server"))
             {
-
                 StartServer();
             }
 
