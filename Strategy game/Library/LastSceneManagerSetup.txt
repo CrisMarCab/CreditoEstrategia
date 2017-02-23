@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/MainTest.unity
+- path: Assets/Area730/Stylized city/Scenes/objects.unity
   isLoaded: 1
   isActive: 1
