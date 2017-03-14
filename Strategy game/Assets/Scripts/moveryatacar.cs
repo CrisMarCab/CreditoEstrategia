@@ -42,7 +42,7 @@ namespace CompleteProject
 			RaycastHit hit;
 
 			if (Input.GetButtonDown ("Fire2")) {
-				if (Physics.Raycast (ray, out hit, 100)) {
+				if (Physics.Raycast (ray, out hit, 10000)) {
 					
 					/*if (hit.collider.CompareTag ("Enemy")) {
 						targetedEnemy = hit.transform;
@@ -53,7 +53,7 @@ namespace CompleteProject
 						walking = true;
 						enemyClicked = false;
                         Debug.Log(hit.point);
-
+                        
                         navMeshAgent.destination = hit.point;
 						navMeshAgent.Resume ();
 					//}
