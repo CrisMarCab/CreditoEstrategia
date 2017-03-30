@@ -22,6 +22,7 @@ public class ManagerCustom : NetworkManager {
 
     }
 
+    public override void OnServerConnect(NetworkConnection conn) { }
 
 
     // Update is called once per frame
