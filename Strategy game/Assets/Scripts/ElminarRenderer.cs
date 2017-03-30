@@ -10,12 +10,14 @@ public class ElminarRenderer : NetworkBehaviour {
 
     void Awake() {
 
-         foreach (Transform child in transform)
-         {
-            Children.Add(child.gameObject);
-         }
+    #if UNITY_ANDROID
+          foreach (Transform child in transform)
+           {
+              Children.Add(child.gameObject);
+           }
        
-        EliminarRenderer(Children);
+          EliminarRenderer(Children);
+    #endif
 
     }
 
