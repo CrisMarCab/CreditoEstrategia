@@ -23,22 +23,22 @@ public class MovimientoCamara : MonoBehaviour {
 		if (Input.mousePosition.x > AnchoPantalla - bordes)
 		{
 			temporal = this.transform.position;
-			temporal.x += velocidad * Time.deltaTime;
+			temporal.z -= velocidad * Time.deltaTime;
 			this.transform.position = temporal;
 		}
 		if (Input.mousePosition.x < 0 + bordes){
 			temporal = this.transform.position;
-			temporal.x -= velocidad * Time.deltaTime;
+			temporal.z += velocidad * Time.deltaTime;
 			this.transform.position = temporal;
 		}
 		if (Input.mousePosition.y > AlturaPantalla - bordes){
 			temporal = this.transform.position;
-			temporal.z += velocidad * Time.deltaTime;
+			temporal.x += velocidad * Time.deltaTime;
 			this.transform.position = temporal;
 		}
 		if (Input.mousePosition.y < 0 - bordes){
 			temporal = this.transform.position;
-			temporal.z -= velocidad * Time.deltaTime;
+			temporal.x -= velocidad * Time.deltaTime;
 			this.transform.position = temporal;	
 		}
 	}
