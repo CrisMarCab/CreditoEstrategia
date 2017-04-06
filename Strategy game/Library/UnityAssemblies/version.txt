@@ -1,11 +1,15 @@
 5.5.0f3:2.3.0.0
 StandaloneWindows
+<<<<<<< HEAD
+<<<<<<< HEAD
 C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/Managed/UnityEngine.dll
+C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll
 C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
 C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
 C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/UnityExtensions/Unity/PlaymodeTestsRunner/UnityEngine.PlaymodeTestsRunner.dll
 C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll
 C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll
+C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll
 C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll
 C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/Managed/UnityEditor.dll
 C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll
@@ -21,4 +25,32 @@ C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/UnityExtensions/Unity/U
 C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll
 C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll
+=======
+=======
+>>>>>>> 2f896ee18d554c709cf834b9ee09020f6e91b5af
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/Managed/UnityEngine.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/PlaymodeTestsRunner/UnityEngine.PlaymodeTestsRunner.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/Managed/UnityEditor.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/nunit.framework.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/UnityEditor.EditorTestsRunner.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/PlaymodeTestsRunner/Editor/UnityEditor.PlaymodeTestsRunner.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/UnityAnalytics/Editor/UnityEditor.Analytics.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/Managed/UnityEditor.Graphs.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll
+<<<<<<< HEAD
+>>>>>>> 2f896ee18d554c709cf834b9ee09020f6e91b5af
+=======
+>>>>>>> 2f896ee18d554c709cf834b9ee09020f6e91b5af
 C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/2015/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll

@@ -29,8 +29,7 @@ namespace CompleteProject
 
 		void Start ()
 		{
-			anim = GetComponent<Animator> ();
-			navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent> ();			
+
 		}
 
 		// Update is called once per frame
