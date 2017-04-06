@@ -2,6 +2,7 @@
 StandaloneWindows
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/Managed/UnityEngine.dll
 C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll
 C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
@@ -28,6 +29,8 @@ C:/Users/Cristian/Documents/Desarrollo/Unity/Editor/Data/PlaybackEngines/windows
 =======
 =======
 >>>>>>> 2f896ee18d554c709cf834b9ee09020f6e91b5af
+=======
+>>>>>>> origin/master
 C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/Managed/UnityEngine.dll
 C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
 C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
@@ -50,7 +53,10 @@ C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/Managed/UnityEditor.Gra
 C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 C:/Users/Cristian Main PC/Documents/UNITY5.5/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2f896ee18d554c709cf834b9ee09020f6e91b5af
 =======
 >>>>>>> 2f896ee18d554c709cf834b9ee09020f6e91b5af
+=======
+>>>>>>> origin/master
 C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/2015/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll
