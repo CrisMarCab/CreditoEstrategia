@@ -2,29 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemigo : MonoBehaviour {
+
+public class Enemigo : MonoBehaviour
+{
 
     Animator anim;
     UnityEngine.AI.NavMeshAgent navMeshAgent;
     GameObject destino;
+    private float cooldowntimer, cooldown;
+    vida vidaavion;
+    bool daño;
 
     void Awake()
     {
         anim = GetComponent<Animator>();
         navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         destino = GameObject.FindWithTag("Destino");
+
+        cooldowntimer = 1;
+        cooldown = cooldowntimer;
     }
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         navMeshAgent.destination = destino.transform.position;
         navMeshAgent.Resume();
+        GameObject avion = GameObject.Find("war_plane_interceptor");
+        vidaavion = avion.GetComponent<vida>();
 
+        anim.SetInteger("estadoAnimacion", 1);
     }
 
     // Update is called once per frame
-    void Update () {
-
+    void Update()
+    {
+        //Debug.Log(vidaavion.getVida_total());
         RaycastHit hit;
 
         Vector3 p1 = transform.position;
@@ -37,8 +50,29 @@ public class Enemigo : MonoBehaviour {
             if (hitColliders[i].tag == "Destino")
             {
                 navMeshAgent.Stop();
+                anim.SetInteger("estadoAnimacion", 0);
+                daño = true;
             }
         }
-        
+
+        if (daño)
+        {
+            anim.SetInteger("estadoAnimacion", -1);
+
+            if (cooldown < 0)
+            {
+                cooldown = cooldowntimer;
+                vidaavion.setVida_total(1);
+            }
+            else
+            {
+                cooldown -= Time.deltaTime;
+            }
+
+        }
     }
+
+
+
+
 }
