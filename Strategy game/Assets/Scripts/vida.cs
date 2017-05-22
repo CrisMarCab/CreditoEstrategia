@@ -9,6 +9,9 @@ public class vida : MonoBehaviour
     int vidadañovisual = 80;
     TextMesh vidavisual;
 
+    [SerializeField]
+    ParticleSystem explosion;
+
     void awake()
     {
 
@@ -30,7 +33,7 @@ public class vida : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     [SerializeField]
@@ -47,6 +50,18 @@ public class vida : MonoBehaviour
             vidavisual.text = vidavisual.text.Remove(0, 1);
             vidadañovisual -= 20;
         }
+
+
+        /*Futura explosión avión.*/
+        /*
+        if(vida_total <= 0 && this.gameObject == GameObject.Find("war_plane_interceptor"))
+        {
+            var em = explosion.emission;
+            //Instantiate(explosion, this.gameObject.transform, Quaternion.identity) as GameObject;
+            em.enabled = true;
+            Destroy(this.gameObject);
+        }
+        */
     }
 
 

@@ -11,6 +11,7 @@ public class Enemigo : MonoBehaviour
     GameObject destino;
     private float cooldowntimer, cooldown;
     vida vidaavion;
+    vida propia;
     bool daño;
 
     void Awake()
@@ -30,6 +31,8 @@ public class Enemigo : MonoBehaviour
         navMeshAgent.Resume();
         GameObject avion = GameObject.Find("war_plane_interceptor");
         vidaavion = avion.GetComponent<vida>();
+        propia = this.GetComponent<vida>();
+
 
         anim.SetInteger("estadoAnimacion", 1);
     }
@@ -62,12 +65,22 @@ public class Enemigo : MonoBehaviour
             if (cooldown < 0)
             {
                 cooldown = cooldowntimer;
-                vidaavion.setVida_total(1);
+                vidaavion.setVida_total(20);
             }
             else
             {
                 cooldown -= Time.deltaTime;
             }
+
+        }
+
+        if (propia.getVida_total() <= 0)
+        {
+            anim.SetInteger("estadoAnimacion", -10);
+            navMeshAgent.Stop();
+            Destroy(this.gameObject, 3);
+            
+
 
         }
     }

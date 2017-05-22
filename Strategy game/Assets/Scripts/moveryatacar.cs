@@ -19,9 +19,10 @@ namespace CompleteProject
         private bool enemyClicked;
         private float nextFire;
         private float cooldowntimer, cooldown;
-        vida vidaavion;
+        vida vidaenemigo;
         bool daño;
 
+        RaycastHit hit;
 
         // Use this for initialization
         void Awake()
@@ -44,37 +45,34 @@ namespace CompleteProject
         void Update()
         {
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit hit;
-
             if (Input.GetButtonDown("Fire2"))
             {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+
                 if (Physics.Raycast(ray, out hit, 10000))
                 {
 
                     if (hit.collider.CompareTag("Enemy"))
                     {
                         targetedEnemy = hit.transform;
-                        vidaavion = targetedEnemy.GetComponent<vida>();
+                        vidaenemigo = targetedEnemy.GetComponent<vida>();
 
                         enemyClicked = true;
                         Debug.Log("Enemigo clickado");
                     }
                     else
                     {
-                        anim.SetInteger("Disparar", 0);
-                        targetedEnemy = null;
-
-                        walking = true;
-                        anim.SetInteger("estadoAnimacion", 1);
-
-                        enemyClicked = false;
-                        //Debug.Log(hit.point);
-
-                        navMeshAgent.destination = hit.point;
-                        navMeshAgent.Resume();
+                        StopShooting();
                     }
+                }
+            }
+
+            if (targetedEnemy != null)
+            {
+                if (vidaenemigo.getVida_total() <= 0)
+                {
+                    StopShooting();
                 }
             }
 
@@ -83,7 +81,7 @@ namespace CompleteProject
                 if (cooldown < 0)
                 {
                     cooldown = cooldowntimer;
-                    vidaavion.setVida_total(5);
+                    vidaenemigo.setVida_total(20);
                 }
                 else
                 {
@@ -112,6 +110,24 @@ namespace CompleteProject
         }
 
 
+        private void StopShooting()
+        {
+
+            anim.SetInteger("Disparar", 0);
+            targetedEnemy = null;
+
+            walking = true;
+            anim.SetInteger("estadoAnimacion", 1);
+
+            enemyClicked = false;
+            //Debug.Log(hit.point);
+
+            navMeshAgent.destination = hit.point;
+            navMeshAgent.Resume();
+
+            daño = false;
+
+        }
 
 
 
