@@ -9,16 +9,15 @@ namespace CompleteProject
     {
         public float shootDistance = 4f;
         /*public PlayerShooting shootingScript;*/
+        [SerializeField]
+        private Transform targetedEnemy, bulletfire;
 
         public Animator anim;
         public UnityEngine.AI.NavMeshAgent navMeshAgent;
-        private Transform targetedEnemy;
         private Ray shootRay;
         private RaycastHit shootHit;
-        private bool walking;
-        private bool enemyClicked;
-        private float nextFire;
-        private float cooldowntimer, cooldown;
+        private bool walking, enemyClicked;
+        private float nextFire, cooldowntimer, cooldown;
         vida vidaenemigo;
         bool daño;
 
@@ -82,6 +81,7 @@ namespace CompleteProject
                 {
                     cooldown = cooldowntimer;
                     vidaenemigo.setVida_total(20);
+                    
                 }
                 else
                 {
@@ -165,6 +165,12 @@ namespace CompleteProject
                 navMeshAgent.Stop();
                 walking = false;
             }
+        }
+
+        public void bulletsmoke() {
+
+            Instantiate(bulletfire, gameObject.transform.position, gameObject.transform.rotation)
+
         }
 
     }

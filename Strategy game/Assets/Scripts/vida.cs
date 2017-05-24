@@ -10,7 +10,7 @@ public class vida : MonoBehaviour
     TextMesh vidavisual;
 
     [SerializeField]
-    ParticleSystem explosion;
+    Transform explosion;
 
     void awake()
     {
@@ -52,16 +52,11 @@ public class vida : MonoBehaviour
         }
 
 
-        /*Futura explosión avión.*/
-        /*
         if(vida_total <= 0 && this.gameObject == GameObject.Find("war_plane_interceptor"))
         {
-            var em = explosion.emission;
-            //Instantiate(explosion, this.gameObject.transform, Quaternion.identity) as GameObject;
-            em.enabled = true;
+            Instantiate(explosion, this.gameObject.transform.position, this.gameObject.transform.rotation);
             Destroy(this.gameObject);
         }
-        */
     }
 
 

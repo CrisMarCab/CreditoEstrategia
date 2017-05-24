@@ -7,7 +7,8 @@ public class ElminarRenderer : NetworkBehaviour {
 
     private Component[] renderer;
     public List<GameObject> Children;
-
+    [SerializeField]
+    Canvas interfazmovil;
     void Awake() {
 
     #if UNITY_ANDROID
@@ -17,6 +18,7 @@ public class ElminarRenderer : NetworkBehaviour {
            }
        
           EliminarRenderer(Children);
+          Instantiate(interfazmovil);
     #endif
 
     }
