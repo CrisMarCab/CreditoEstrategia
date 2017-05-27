@@ -43,6 +43,7 @@ namespace CompleteProject
         // Update is called once per frame
         void Update()
         {
+            bulletsmoke();
 
             if (Input.GetButtonDown("Fire2"))
             {
@@ -81,7 +82,7 @@ namespace CompleteProject
                 {
                     cooldown = cooldowntimer;
                     vidaenemigo.setVida_total(20);
-                    
+
                 }
                 else
                 {
@@ -167,9 +168,10 @@ namespace CompleteProject
             }
         }
 
-        public void bulletsmoke() {
+        public void bulletsmoke()
+        {
 
-            Instantiate(bulletfire, gameObject.transform.position, gameObject.transform.rotation)
+            Instantiate(bulletfire, transform.position + (transform.forward * 2) + transform.up *2, transform.rotation);
 
         }
 
