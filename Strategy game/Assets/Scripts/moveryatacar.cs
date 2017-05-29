@@ -7,11 +7,10 @@ namespace CompleteProject
 
     public class moveryatacar : NetworkBehaviour
     {
-        public float shootDistance = 4f;
+        public int shootDistance = 50;
         /*public PlayerShooting shootingScript;*/
         [SerializeField]
-        private Transform targetedEnemy, bulletfire;
-
+        private Transform targetedEnemy;
         public Animator anim;
         public UnityEngine.AI.NavMeshAgent navMeshAgent;
         private Ray shootRay;
@@ -20,46 +19,33 @@ namespace CompleteProject
         private float nextFire, cooldowntimer, cooldown;
         vida vidaenemigo;
         bool daño;
-
+        public AudioClip sonidoDisparo;
         RaycastHit hit;
 
-        // Use this for initialization
         void Awake()
         {
             anim = GetComponent<Animator>();
-
             navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-
             cooldowntimer = 1;
             cooldown = cooldowntimer;
 
         }
 
-        void Start()
-        {
 
-        }
-
-        // Update is called once per frame
         void Update()
         {
-            bulletsmoke();
-
             if (Input.GetButtonDown("Fire2"))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-
+                
                 if (Physics.Raycast(ray, out hit, 10000))
                 {
-
                     if (hit.collider.CompareTag("Enemy"))
                     {
                         targetedEnemy = hit.transform;
                         vidaenemigo = targetedEnemy.GetComponent<vida>();
 
                         enemyClicked = true;
-                        Debug.Log("Enemigo clickado");
                     }
                     else
                     {
@@ -82,6 +68,7 @@ namespace CompleteProject
                 {
                     cooldown = cooldowntimer;
                     vidaenemigo.setVida_total(20);
+                    AudioSource.PlayClipAtPoint(sonidoDisparo, transform.position, 0.3f);
 
                 }
                 else
@@ -130,9 +117,6 @@ namespace CompleteProject
 
         }
 
-
-
-
         private void MoveAndShoot()
         {
             if (targetedEnemy == null)
@@ -142,7 +126,7 @@ namespace CompleteProject
             }
 
             navMeshAgent.destination = targetedEnemy.position;
-
+            Debug.Log(navMeshAgent.remainingDistance + " " +shootDistance);
             if (navMeshAgent.remainingDistance >= shootDistance)
             {
                 daño = false;
@@ -153,7 +137,7 @@ namespace CompleteProject
 
             }
 
-            if ((navMeshAgent.remainingDistance + 6) < shootDistance)
+            if ((navMeshAgent.remainingDistance) < shootDistance)
             {
                 anim.SetInteger("estadoAnimacion", 0);
 
@@ -167,14 +151,6 @@ namespace CompleteProject
                 walking = false;
             }
         }
-
-        public void bulletsmoke()
-        {
-
-            Instantiate(bulletfire, transform.position + (transform.forward * 2) + transform.up *2, transform.rotation);
-
-        }
-
     }
 
 }

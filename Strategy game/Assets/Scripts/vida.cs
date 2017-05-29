@@ -11,16 +11,10 @@ public class vida : MonoBehaviour
 
     [SerializeField]
     Transform explosion;
+    public AudioClip sonidoExplosion;
 
-    void awake()
-    {
-
-    }
-
-    // Use this for initialization
     void Start()
     {
-        //for (int i = 0; i <= gameObject.transform.childCount; i++)
         foreach (Transform child in transform)
         {
             if (child.transform.name == "Vida")
@@ -28,12 +22,6 @@ public class vida : MonoBehaviour
                 vidavisual = child.GetComponent<TextMesh>();
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     [SerializeField]
@@ -50,16 +38,11 @@ public class vida : MonoBehaviour
             vidavisual.text = vidavisual.text.Remove(0, 1);
             vidadañovisual -= 20;
         }
-
-
-        if(vida_total <= 0 && this.gameObject == GameObject.Find("war_plane_interceptor"))
+        if (vida_total <= 0 && this.gameObject == GameObject.Find("destino"))
         {
+            AudioSource.PlayClipAtPoint(sonidoExplosion, transform.position);
             Instantiate(explosion, this.gameObject.transform.position, this.gameObject.transform.rotation);
             Destroy(this.gameObject);
         }
     }
-
-
-
-
 }
