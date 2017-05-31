@@ -9,7 +9,7 @@ public class ElminarRenderer : NetworkBehaviour
     private Component[] renderer;
     public List<GameObject> Children;
     [SerializeField]
-    Canvas interfazmovil;
+    Canvas interfaz_movil;
     void Awake()
     {
 
@@ -20,7 +20,11 @@ public class ElminarRenderer : NetworkBehaviour
            }
        
           EliminarRenderer(Children);
-          Instantiate(interfazmovil);
+#endif
+
+#if PC
+                interfaz_movil.enabled = false;
+
 #endif
 
     }
