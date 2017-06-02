@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class botonGranada : MonoBehaviour
+using UnityEngine.Networking;
+public class botonGranada : NetworkBehaviour
 {
     public float coolDown = 1;
     public float coolDownTimer;
@@ -26,7 +26,8 @@ public class botonGranada : MonoBehaviour
         }
     }
 
-    public void lanzaGranada(bool boton)
+    [Command]
+    public void CmdlanzaGranada(bool boton)
     {
         if (boton && coolDownTimer == 0)
         {

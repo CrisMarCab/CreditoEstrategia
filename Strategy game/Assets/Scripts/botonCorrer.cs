@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Networking;
 
-public class botonCorrer : MonoBehaviour {
+public class botonCorrer : NetworkBehaviour
+{
 
     private NavMeshAgent agent;
     public float coolDown = 10;
@@ -27,7 +29,8 @@ public class botonCorrer : MonoBehaviour {
         }
     }
 
-    public void velocidad(bool boolean)
+    [Command]
+    public void Cmdvelocidad(bool boolean)
     {
         if (boolean && coolDownTimer == 0)
         {

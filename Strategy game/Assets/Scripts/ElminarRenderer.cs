@@ -22,9 +22,8 @@ public class ElminarRenderer : NetworkBehaviour
           EliminarRenderer(Children);
 #endif
 
-#if PC
-                interfaz_movil.enabled = false;
-
+#if UNITY_STANDALONE_WIN 
+        interfaz_movil.enabled = false;
 #endif
 
     }
