@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-
-public class Enemigo : MonoBehaviour
+public class Enemigo : NetworkBehaviour
 {
     Animator anim;
     UnityEngine.AI.NavMeshAgent navMeshAgent;

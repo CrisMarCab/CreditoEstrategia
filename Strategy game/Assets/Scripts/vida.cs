@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class vida : MonoBehaviour
 {
     [SerializeField]
@@ -42,7 +42,14 @@ public class vida : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(sonidoExplosion, transform.position);
             Instantiate(explosion, this.gameObject.transform.position, this.gameObject.transform.rotation);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
+        }
+    }
+    private void OnDestroy()
+    {
+        if (this.gameObject == GameObject.Find("destino"))
+        {
+            SceneManager.LoadScene("FinDelJuego");
         }
     }
 }

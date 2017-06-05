@@ -27,8 +27,9 @@ public class botonGranada : NetworkBehaviour
     }
 
     [Command]
-    public void CmdlanzaGranada(bool boton)
+    public void CmdLanzaGranada(bool boton)
     {
+        Debug.LogError("CmdlanzaGranada called");
         if (boton && coolDownTimer == 0)
         {
             granada = (GameObject)Instantiate(granadaModelo);
@@ -39,9 +40,22 @@ public class botonGranada : NetworkBehaviour
             granada.transform.rotation = transform.rotation;
             Rigidbody rb = granada.GetComponent<Rigidbody>();
             rb.AddRelativeForce(new Vector3(0, 300, 750));
+            /*
+            GameObject bullet = (GameObject)Instantiate(
+            bulletPrefab,
+            transform.position + transform.right,
+            Quaternion.identity);
 
-            //Destroy(granada, 5);
-            coolDownTimer = coolDown;
+            var bullet2D = bullet.GetComponent<Rigidbody2D>();
+            bullet2D.velocity = transform.right * bulletSpeed;
+            Destroy(bullet, lifeTime);
+            
+            NetworkServer.Spawn(bullet);*/
+        }
+
+        //Destroy(granada, 5);
+        coolDownTimer = coolDown;
         }
     }
-}
+
+

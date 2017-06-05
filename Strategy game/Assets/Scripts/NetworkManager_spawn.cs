@@ -32,7 +32,7 @@ public class NetworkManager_spawn : NetworkManager {
 	{
 
 		_NextSpawn = Time.time + SpawnInterval;
-
+        
 		objectsToSpawn = (int)Random.Range(MinObjectsSpawned, MaxObjectsSpawned);
 	}
 
@@ -41,6 +41,7 @@ public class NetworkManager_spawn : NetworkManager {
 	{
 		if (Time.time >= _NextSpawn && objectsToSpawn < MaxObjectsSpawned)
 		{
+            Debug.Log("Spawn");
 			objectsToSpawn = objectsToSpawn + 1;
 
 			Instantiate(enemigo,posicionesSpawn[Random.Range(0,5)].transform.position, Quaternion.identity);

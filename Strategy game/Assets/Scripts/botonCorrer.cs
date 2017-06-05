@@ -4,15 +4,16 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Networking;
 
-public class botonCorrer : NetworkBehaviour
+public class botonCorrer : MonoBehaviour
 {
-
+    //public GameObject protagonista;
     private NavMeshAgent agent;
     public float coolDown = 10;
     public float coolDownTimer;
 
     // Use this for initialization
     void Start () {
+        //protagonista = NetworkServer.FindLocalObject (gameObject.NetworkIdentity.netId());
         agent = GetComponent<NavMeshAgent>();
 	}
 
@@ -29,8 +30,7 @@ public class botonCorrer : NetworkBehaviour
         }
     }
 
-    [Command]
-    public void Cmdvelocidad(bool boolean)
+    public void CmdVelocidad(bool boolean)
     {
         if (boolean && coolDownTimer == 0)
         {

@@ -10,11 +10,13 @@ public class ElminarRenderer : NetworkBehaviour
     public List<GameObject> Children;
     [SerializeField]
     Canvas interfaz_movil;
+   public GameObject player;
     void Awake()
     {
 
 #if UNITY_ANDROID
-          foreach (Transform child in transform)
+
+        foreach (Transform child in transform)
            {
               Children.Add(child.gameObject);
            }
@@ -23,7 +25,7 @@ public class ElminarRenderer : NetworkBehaviour
 #endif
 
 #if UNITY_STANDALONE_WIN 
-        interfaz_movil.enabled = false;
+               // interfaz_movil.GetComponent<Canvas>().enabled = false;
 #endif
 
     }
@@ -52,7 +54,9 @@ public class ElminarRenderer : NetworkBehaviour
 
                 foreach (MeshRenderer comp in renderer)
                 {
-                    comp.enabled = !comp.enabled;
+                    if (!GameObject.Find("protagonista") || !GameObject.Find("enemigo")) {
+                        comp.enabled = !comp.enabled;
+                    }
                 }
 
             }
