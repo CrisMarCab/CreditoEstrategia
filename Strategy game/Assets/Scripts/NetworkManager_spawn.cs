@@ -4,12 +4,11 @@ using UnityEngine.Networking;
 using UnityEngine;
 
 public class NetworkManager_spawn : NetworkManager {
-
-	public GameObject enemigo, onClick;
+	public GameObject enemigo;
 	int objectsToSpawn;
 
 	public GameObject[] posicionesSpawn;
-    
+
 	public float SpawnInterval = 15;
 	public float MaxObjectsSpawned = 8;
 	public float MinObjectsSpawned = 3;
@@ -26,13 +25,10 @@ public class NetworkManager_spawn : NetworkManager {
     {
 
 
+
     }
 
-    public override void OnStartServer()
-    {
-    }
-
-    void Start()
+	void Start()
 	{
 
 		_NextSpawn = Time.time + SpawnInterval;
@@ -55,5 +51,4 @@ public class NetworkManager_spawn : NetworkManager {
 	}
 
 
-
-}
+    }

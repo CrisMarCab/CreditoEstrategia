@@ -6,32 +6,31 @@ using UnityEngine.Networking;
 
 public class onClick : NetworkBehaviour
 {
-    [SerializeField]
-    GameObject habilidades, habilidadescliente;
-    int id;
+    GameObject habilidades;
 
     void Start()
     {
-        habilidades = GameObject.Find("Llamadordehabilidades");
+
+
     }
 
     void Update()
     {
 
+        habilidades = GameObject.Find("Llamadordehabilidades");
 
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Hola");
-            RpcTaskOnClick(habilidades);
+            CmdTaskOnClick();
 
         }
 
 
 
     }
-
-    [ClientRpc]
-    void RpcTaskOnClick(GameObject habilidades)
+    [Command]
+    void CmdTaskOnClick()
     {
         Debug.Log("Adios");
         habilidades.GetComponent<habilidades>().Velocidad();
