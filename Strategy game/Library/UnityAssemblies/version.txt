@@ -1,5 +1,5 @@
 5.6.1f1:3.1.0.0
-StandaloneWindows
+Android
 C:/Users/Cristian/Documents/Unity/Editor/Data/Managed/UnityEngine.dll
 C:/Users/Cristian/Documents/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
 C:/Users/Cristian/Documents/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll

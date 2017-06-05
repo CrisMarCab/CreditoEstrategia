@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class habilidades : MonoBehaviour {
+public class habilidades : NetworkBehaviour {
     [SerializeField]
     GameObject protagonista;
 	// Use this for initialization
