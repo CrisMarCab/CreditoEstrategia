@@ -10,16 +10,29 @@ public class onClick : NetworkBehaviour
 
     void Start()
     {
-        habilidades = GameObject.Find("Llamadordehabilidades");
 
-        if (Input.touchCount == 1) {
-            CmdTaskOnClick();
-        }
+
     }
 
+    void Update()
+    {
+
+        habilidades = GameObject.Find("Llamadordehabilidades");
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Hola");
+            CmdTaskOnClick();
+
+        }
+
+
+
+    }
     [Command]
     void CmdTaskOnClick()
     {
+        Debug.Log("Adios");
         habilidades.GetComponent<habilidades>().Velocidad();
 
     }
