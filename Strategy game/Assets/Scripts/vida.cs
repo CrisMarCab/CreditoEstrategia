@@ -7,6 +7,7 @@ public class vida : MonoBehaviour
     [SerializeField]
     int vida_total = 100;
     int vidadañovisual = 80;
+    bool muerteAvion = false;
     TextMesh vidavisual;
 
     [SerializeField]
@@ -42,9 +43,11 @@ public class vida : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(sonidoExplosion, transform.position);
             Instantiate(explosion, this.gameObject.transform.position, this.gameObject.transform.rotation);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            SceneManager.LoadScene("FinDelJuego");
         }
     }
+
     private void OnDestroy()
     {
         if (this.gameObject == GameObject.Find("destino"))

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-public class botonGranada : NetworkBehaviour
+public class botonGranada : MonoBehaviour
 {
     public float coolDown = 1;
     public float coolDownTimer;
@@ -26,7 +26,6 @@ public class botonGranada : NetworkBehaviour
         }
     }
 
-    [Command]
     public void CmdLanzaGranada(bool boton)
     {
         Debug.LogError("CmdlanzaGranada called");
